@@ -1,22 +1,15 @@
-// Напиши функцію isEnoughCapacity(products, containerSize), яка обчислює, чи помістяться всі товари в контейнер при пакуванні.
-// Функція оголошує два параметри:
-
-// products — об’єкт, у якому ключі містять назви товарів, а їхні значення — кількість цих товарів. Наприклад, { apples: 2, grapes: 4 }.
-// containerSize — число, максимальна кількість одиниць товарів, яку в себе може вмістити контейнер.
-
-//Функція має повернути результат перевірки, чи помістяться всі товари в контейнер. Тобто порахувати загальну кількість товарів в об’єкті products і повернути true, якщо вона менше або дорівнює containerSize, і false, якщо ні.
-
-
 function isEnoughCapacity(products, containerSize) {
-    let total = 0;
-    for (const key in products) {
-        total += products[key];
-    }
-    if (total <= containerSize)  
-        return true;
-    else
-        return false;
-}
+  let total = 0;
+
+  for (const value of Object.values(products)){
+    total += value;
+  }
+  
+  return total <= containerSize;
+  }
+  
+
+
 
 console.log(
   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
