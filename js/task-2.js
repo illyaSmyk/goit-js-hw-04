@@ -1,6 +1,6 @@
 function calcAverageCalories(days) {
   if (days.length === 0) {
-    return "0";
+    return 0;
   }
   const caloriesArr = [];
 
@@ -14,7 +14,7 @@ function calcAverageCalories(days) {
   }
   const average = totalCalories / caloriesArr.length;
 
-  return average === 0 ? "0" : average;
+  return average;
 }
 
 console.log(
